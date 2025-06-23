@@ -3,7 +3,7 @@
 
     <param name="robot_description" command = "$(find xacro)/xacro --inorder $(find cobot_simulation)/urdf/cobot.urdf"/>
     
-    <!-- Det teh position in empty world -->
+    <!-- position in empty world -->
     <arg name="x" default="0"/>
     <arg name="y" default="0"/>
     <arg name="z" default="0"/>
