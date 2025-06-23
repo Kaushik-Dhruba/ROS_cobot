@@ -26,6 +26,6 @@ This repository provides a ROS-based simulation of a 6-DOF robotic arm for pick-
 - Basic **pick-and-place** routine
 - Modular structure for extension and real-robot adaptation
 
-## Note
+## 🗒️ Note
 
 - add maintainer information at package.xml
