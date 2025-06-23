@@ -9,9 +9,10 @@ This repository provides a ROS-based simulation of a 6-DOF robotic arm for pick-
 
 ## 🖼️ Demo
 
-
-![Robotic Arm Simulation](docs/images/Gazebo1.png)
-![Robotic Arm Simulation](docs/images/Gazebo2.png)
+<p align="center">
+  <img src="docs/images/Gazebo1.PNG" alt="Robotic Arm Simulation 1" width="45%" />
+  <img src="docs/images/Gazebo2.PNG" alt="Robotic Arm Simulation 2" width="45%" />
+</p>
 
 ---
 
