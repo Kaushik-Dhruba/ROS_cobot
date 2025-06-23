@@ -15,24 +15,11 @@ find_package(catkin REQUIRED COMPONENTS
   controller_manager
   joint_state_controller
   robot_state_publisher
-
-  cmake_modules
-  interactive_markers
-  moveit_core
-  moveit_ros_perception
-  moveit_ros_planning_interface
-  pluginlib
-  roscpp
-  std_msgs
-  pcl_conversions
-  pcl_ros
-  roscpp
-  sensor_msgs
 )
 
 ## System dependencies are found with CMake's conventions
-set(CMAKE_CXX_FLAGS "-std=c++0x ${CMAKE_CXX_FLAGS}")
-find_package(Boost REQUIRED COMPONENTS system)
+##  set(CMAKE_CXX_FLAGS "-std=c++0x ${CMAKE_CXX_FLAGS}")
+##  find_package(Boost REQUIRED COMPONENTS system)
 
 
 ## Uncomment this if the package has a setup.py. This macro ensures
@@ -167,41 +154,6 @@ include_directories(
 # target_link_libraries(${PROJECT_NAME}_node
 #   ${catkin_LIBRARIES}
 # )
-
-
-add_executable(test_random_cobot_node src/test_random_cobot.cpp)
-add_dependencies(test_random_cobot_node ${cobot_test_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-target_link_libraries(test_random_cobot_node ${catkin_LIBRARIES})
-
-add_executable(test_custom_cobot_node src/test_custom_cobot.cpp)
-add_dependencies(test_custom_cobot_node ${cobot_test_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-target_link_libraries(test_custom_cobot_node ${catkin_LIBRARIES})
-
-add_executable(add_collision_object_cobot_node src/add_collision_object_cobot.cpp)
-add_dependencies(add_collision_object_cobot_node ${cobot_test_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-target_link_libraries(add_collision_object_cobot_node ${catkin_LIBRARIES})
-
-add_executable(attach_detach_object_cobot_node src/attach_detach_object_cobot.cpp)
-add_dependencies(attach_detach_object_cobot_node ${cobot_test_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-target_link_libraries(attach_detach_object_cobot_node ${catkin_LIBRARIES})
-
-add_executable(checking_collision_cobot_node src/checking_collision.cpp)
-add_dependencies(checking_collision_cobot_node ${cobot_test_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-target_link_libraries(checking_collision_cobot_node ${catkin_LIBRARIES})
-
-
-add_executable(pick_and_place_cobot_node src/pick_place_cobot.cpp)
-add_dependencies(pick_and_place_cobot_node ${cobot_test_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-target_link_libraries(pick_and_place_cobot_node ${catkin_LIBRARIES})
-
-#add_executable(pick_and_place_gazebo_node src/pick_place_gazebo.cpp)
-#add_dependencies(pick_and_place_gazebo_node ${cobot_test_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-#target_link_libraries(pick_and_place_gazebo_node ${catkin_LIBRARIES})
-
-#add_executable(pick_and_place_mimic_node src/pick_place_mimic.cpp)
-#add_dependencies(pick_and_place_mimic_node ${cobot_test_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-#target_link_libraries(pick_and_place_mimic_node ${catkin_LIBRARIES})
-
 
 #############
 ## Install ##
