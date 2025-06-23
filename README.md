@@ -28,4 +28,4 @@ This repository provides a ROS-based simulation of a 6-DOF robotic arm for pick-
 
 ## Note
 
--add maintainer information at package.xml
+- add maintainer information at package.xml
