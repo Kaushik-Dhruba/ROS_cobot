@@ -4,7 +4,6 @@ cobot:
     type: joint_state_controller/JointStateController
     publish_rate: 50
 
-  # Position controllers
   joint1_position_controller:
     type: effort_controllers/JointPositionController
     joint: base_link_link1
