@@ -5,7 +5,7 @@
 
 This repository provides a ROS-based simulation of a 6-DOF robotic arm for pick-and-place operations. It uses **Gazebo** for realistic physics simulation and **RViz** for real-time visualization. The robot is fully modeled using URDF and integrates with ROS control interfaces for trajectory execution.
 
-> **MoveIt** simulation will be added soon.
+> **MoveIt** with Rviz simulation of inverse kinematics solution will be added soon.
 
 ---
 
