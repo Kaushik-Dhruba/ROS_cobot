@@ -39,9 +39,6 @@
 
     <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
     <remap from="/joint_states" to="/cobot/joint_states"/>
-    <!--
-    <node name="rqt_reconfigure" pkg="rqt_gui" type="rqt_gui" />
-    -->
 
      <include file= "$(find cobot_config)/launch/planning_context.launch" >
         <arg name="load_robot_description" value="false" />
