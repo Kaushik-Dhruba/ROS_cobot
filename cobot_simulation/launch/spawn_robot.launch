@@ -1,10 +1,8 @@
 <?xml version="1.0"?>
 <launch>
 
-    <!-- Associate to the robot description parameter, the urdf file that model the robot-->
     <param name="robot_description" command = "$(find xacro)/xacro --inorder $(find cobot_simulation)/urdf/cobot.urdf" />
 
-    <!-- Set teh position in empty world-->
     <arg name="x" default="0" />
     <arg name="y" default="0" />
     <arg name="z" default="0" />
