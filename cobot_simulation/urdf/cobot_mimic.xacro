@@ -4,7 +4,6 @@
     <xacro:include filename="$(find cobot_simulation)/urdf/joint_link.xacro"/>
     <xacro:include filename="$(find cobot_simulation)/urdf/gripper_mimic.xacro"/>
 
-    <!-- Fix the cobot to the world-->
     <link name="world"/>
 
     <xacro:cobot_link_cylinder name="base_link" origin_xyz="0.0 0.0 0.025" origin_rpy= "0 0 0" 
@@ -63,11 +62,8 @@
                             origin_xyz="0 0.0 0.180" origin_rpy="0 1.57 0" />
 
     
-    <!-- Build the TCP or end effector-->
-
     <xacro:gripper_mimic parent="link5" origin_xyz="0 0.0 0.125" />
 
-    <!-- put transmission in each joint-->
 
     <xacro:transmission name="trans_base_link__link1" 
                         joint_name="base_link__link1" 
@@ -91,17 +87,14 @@
     <xacro:transmission name="trans_link4__link5" 
                         joint_name="link4__link5" 
                         actuator_name="motor_link4__link5" />
-	 
 
 
-    <!-- Gazebo plugin-->
     <gazebo>
         <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
             <robotNamespace>/cobot</robotNamespace>
         </plugin>
     </gazebo>
 
-    <!-- Make the robot more fancy :)-->
     <gazebo reference="base_link" >
         <material>Gazebo/Blue</material>
     </gazebo>
