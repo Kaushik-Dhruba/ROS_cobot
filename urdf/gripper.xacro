@@ -3,7 +3,6 @@
 
     <xacro:include filename="$(find cobot_simulation)/urdf/joint_link.xacro"/>
 
-    <!-- Model a gripper-->
     <xacro:macro name="gripper_mimic" params="parent origin_xyz">
 
         <!-- Gripper connector-->
@@ -24,7 +23,6 @@
                         joint_name="gripper_joint" 
                         actuator_name="motor_gripper_joint" />
 
-        <!-- Gripper right-->
         <xacro:cobot_link_box name="gripper_right" origin_xyz="0.0 0.0 0.05" origin_rpy="0 0 0" 
                             size="0.01 0.01 0.1" 
                             mass="0.5" ixx="0.00042" ixy="0" ixz="0" iyy="0.00042" iyz="0" izz="0.0000083"/>
@@ -42,7 +40,6 @@
                         joint_name="gripper_right_joint" 
                         actuator_name="motor_gripper_right_joint" />
 
-        <!-- Gripper left-->
         <xacro:cobot_link_box name="gripper_left" origin_xyz="0.0 0.0 0.05" origin_rpy="0 0 0" 
                             size="0.01 0.01 0.1" 
                             mass="0.5" ixx="0.00042" ixy="0" ixz="0" iyy="0.00042" iyz="0" izz="0.0000083"/>
