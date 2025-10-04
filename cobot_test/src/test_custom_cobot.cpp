@@ -24,7 +24,6 @@ int main(int argc, char **argv)
     ROS_INFO("Reference frame: %s", group.getPlanningFrame().c_str());
     ROS_INFO("Reference frame: %s", group.getEndEffectorLink().c_str());
 
-    // Target position
     geometry_msgs::Pose target_pose1;
     target_pose1.orientation.x = 0;
     target_pose1.orientation.y = 0;
@@ -36,12 +35,10 @@ int main(int argc, char **argv)
     target_pose1.position.z = 1;
     group.setPoseTarget(target_pose1);
 
-    // visualize the planning
     moveit::planning_interface::MoveGroupInterface::Plan my_plan;
     moveit::planning_interface::MoveItErrorCode success = group.plan(my_plan);
     ROS_INFO("visualizeing plan %s", success.val ? "":"FAILED");
 
-    // move the group arm
     group.move();
 
     ros::shutdown();
