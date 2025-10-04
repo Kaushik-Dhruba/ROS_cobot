@@ -2,15 +2,12 @@
 
 <launch>
 
-    <!-- Associate to the robot description parameter, the urdf file that model the robot-->
     <param name="robot_description" command = "$(find xacro)/xacro --inorder $(find cobot_simulation)/urdf/cobot.urdf" />
 
-    <!-- Set the position in empty world-->
     <arg name="x" default="0" />
     <arg name="y" default="0" />
     <arg name="z" default="0" />
 
-    <!-- Cube-->
     <param name="cube" command = "$(find xacro)/xacro --inorder $(find cobot_simulation)/urdf/cube_pick_place.urdf" />
 
     <!-- Set the position of the cube in empty world-->
@@ -19,7 +16,6 @@
     <arg name="z_c" default="0.025" />
 
 
-    <!-- Launch Gezabo world in paused-->
     <include file = "$(find gazebo_ros)/launch/empty_world.launch" >
         <arg name="use_sim_time" value="true"/>
         <arg name="debug" value="false"/>
@@ -27,18 +23,13 @@
         <arg name="paused" value="true" />
     </include>   
 
-    <!-- Spawn the robot using the package gazebo_ros-->
     <node name="spawn_the_robot" pkg="gazebo_ros" type="spawn_model"  output="screen" args="-urdf -param robot_description -model cobot -x $(arg x) -y $(arg y) -z $(arg z)" />
     
-    <!-- Spawn the cube using the package gazebo_ros-->
     <node name="spawn_the_cube" pkg="gazebo_ros" type="spawn_model"  output="screen" args="-urdf -param cube -model cube_pick_place -x $(arg x_c) -y $(arg y_c) -z $(arg z_c)" />
     
 
-
-    <!-- Load the controllers-->
     <rosparam command="load" file="$(find cobot_simulation)/config/joints_controllers.yaml"/>
 
-    <!-- Load the node controller manager-->
     <node name="controller_spawner" pkg="controller_manager" type="spawner"  
             output="screen" respawn="false" ns="/cobot"
             args="joint_state_controller
@@ -54,7 +45,6 @@
         
     </node>
 
-    <!-- Convert joint states to TF transform for rviz and rqt-->
     <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"  
             output="screen" respawn="false">
             <remap from="/joint_states" to="/cobot/joint_states"/>
